@@ -11,10 +11,10 @@ s:
 	avr-size --mcu=$(MCU) -C $(SRC).elf
 
 i:
-	avrdude -p $(MCU) -c linuxgpio -v
+	sudo avrdude -p $(MCU) -c linuxgpio -v
 
 p:
-	avrdude -P $(PORT) -c linuxgpio -p $(MCU) -U flash:w:$(SRC).hex
+	sudo avrdude -P $(PORT) -c linuxgpio -p $(MCU) -U flash:w:$(SRC).hex
 
 c:
 	rm -rf $(SRC).o
