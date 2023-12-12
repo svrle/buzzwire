@@ -16,6 +16,9 @@ i:
 p:
 	sudo avrdude -P $(PORT) -c linuxgpio -p $(MCU) -U flash:w:$(SRC).hex
 
+er:
+	sudo avrdude -p $(MCU) -c linuxgpio -U eeprom:r:-:h
+
 c:
 	rm -rf $(SRC).o
 	rm -rf $(SRC).elf
