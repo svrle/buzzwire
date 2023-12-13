@@ -1,14 +1,13 @@
 MCU		= atmega328p
-SRC		= blink
+SRC		= main
 PORT		= /dev/spidev0.0
 
 all:
 	avr-gcc -Os -mmcu=$(MCU) -I/usr/lib/avr/include/ -c $(SRC).c
 	avr-gcc -mmcu=$(MCU) -o $(SRC).elf $(SRC).o
 	avr-objcopy -j .text -j .data -O ihex $(SRC).elf $(SRC).hex
-
-s:
 	avr-size --mcu=$(MCU) -C $(SRC).elf
+	sudo avrdude -P $(PORT) -c linuxgpio -p $(MCU) -U flash:w:$(SRC).hex
 
 i:
 	sudo avrdude -p $(MCU) -c linuxgpio -v
