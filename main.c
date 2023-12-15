@@ -6,10 +6,11 @@
 #define CONTACT_DELAY 500
 
 ISR( INT1_vect ) {
-  //cli();
-  _delay_ms(CONTACT_DELAY);
-  PORTB ^= (1 << PB0);	// togle pin 0 of port B
-  //sei();
+  cli();
+  PORTB |= (1 << PB0);	// pin on 0 of port B
+  _delay_ms(CONTACT_DELAY); // delay between contacts in case that probe moving is with unstable hand
+  PORTB &= ~(1 << PB0);	// pin off 0 of port B
+  sei();
 }
 
 int main (void)
@@ -29,9 +30,7 @@ int main (void)
     // Set by default PB0 low
     DDRB |= ~(1<<DDB0);
     while (1) {
-      //sei();
-      //_delay_ms(5000);
-
+      //wheel loop
     }
 
 }
