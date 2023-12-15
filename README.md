@@ -11,3 +11,7 @@ Reference: https://www.pocketmagic.net/how-to-set-the-avr-fusebits/
 Releases:
 
 v1 - Basic reaction on wire, when wire is connected led diode would go On and have buffer of 250ms in case of flapping main wire
+
+## Installation
+
+Upload to MCU buzzwireV1.hex
