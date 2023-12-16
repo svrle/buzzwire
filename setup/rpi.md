@@ -8,14 +8,14 @@ sudo apt-get install gcc-avr git-core binutils-avr avr-libc avrdude avrdude-doc
 ```
 
 ## Pin connection
-
+```
   Rpi3            ATMega328P
 MOSI(GPIO10)-----PB3(MOSI) 
 MISO(GPIO09)-----PB4(MISO)
 SCLK(GPIO11)-----PB5(SCK)
 Ground-----------GND
 GPIO23-----------PC6(RESET)
-
+```
 ## Configuring `avrdude`
 
 Edit `/etc/avrdude.conf` file and change it as:
