@@ -3,7 +3,7 @@ SRC		= main
 PORT		= /dev/spidev0.0
 
 all:
-	avr-gcc -Os -mmcu=$(MCU) -I/usr/lib/avr/include/ -c $(SRC).c
+	avr-gcc -Os -mmcu=$(MCU) -I/home/svrle/buzzwire/ -I/usr/lib/avr/include/ -c $(SRC).c
 	avr-gcc -mmcu=$(MCU) -o $(SRC).elf $(SRC).o
 	avr-objcopy -j .text -j .data -O ihex $(SRC).elf $(SRC).hex
 	avr-size --mcu=$(MCU) -C $(SRC).elf
