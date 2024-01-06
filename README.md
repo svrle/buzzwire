@@ -5,6 +5,7 @@ Old fashion game with networking and multiplayer
 ## Releases:
 
 v1 - Basic reaction on wire, when wire is connected led diode would go On and have buffer of 250ms in case of flapping main wire
+v2 - Basic reaction on wire, with one digit display as counter of hits
 
 ## Setup Programmer
 - [Raspberry Pi 3](setup/rpi.md)
